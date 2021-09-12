@@ -7,16 +7,13 @@ export default function Header() {
     <>
       <div className={headerStyle.titleWrap}>
         <Link href='/'>
-          <a className={headerStyle.leftTitle}>Jackson Liu</a>
+          <a className={headerStyle.backHome}>Randomly Pick</a>
         </Link>
-        <Link href='/home/documents'>
-          <a className={headerStyle.subTitle1}>Documents</a>
+        <Link href='/advanced'>
+          <a className={headerStyle.subTitle1}>Advanced</a>
         </Link>
-        <Link href='/home/instances'>
-          <a className={headerStyle.subTitle2}>Instance</a>
-        </Link>
-        <Link href='/home/blog'>
-          <a className={headerStyle.subTitle3}>Blog</a>
+        <Link href='/customized'>
+          <a className={headerStyle.subTitle2}>Customized</a>
         </Link>
       </div>
     </>

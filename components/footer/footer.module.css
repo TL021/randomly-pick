@@ -1,0 +1,12 @@
+.footerWrap {
+  /* position: fixed; */
+  /* bottom: 0; */
+  background-color: whitesmoke;
+  width: 100%;
+  height: 8rem;
+}
+
+.copyRight {
+  text-align: center;
+  padding-top: 6rem;
+}
