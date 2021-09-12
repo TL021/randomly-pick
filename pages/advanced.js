@@ -7,21 +7,21 @@ import { useRef, useState } from 'react'
 
 import homeStyle from '../styles/Home.module.css'
 
-export default function Blog() {
+export default function Advanced() {
 
-  const [employeeArr, useEmployeeArr] = useState([...employeeSet])
+  const [employeeArr, setEmployeeArr] = useState([...employeeSet])
   const deleteRef = useRef('')
   const addRef = useRef('')
 
   const handleAddClick = () => {
     employeeSet.add(addRef.current.value)
-    useEmployeeArr([...employeeSet])
+    setEmployeeArr([...employeeSet])
     // console.log('employeeArr@@@', employeeArr)
   }
 
   const handleHideClick = () => {
     employeeSet.delete(deleteRef.current.value)
-    useEmployeeArr([...employeeSet])
+    setEmployeeArr([...employeeSet])
     // console.log('employeeArr@@@', employeeArr)
   }
 
