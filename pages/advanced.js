@@ -41,7 +41,7 @@ export default function Advanced() {
         </div>
         <Pick employeeArr={employeeArr}/>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   )
 }

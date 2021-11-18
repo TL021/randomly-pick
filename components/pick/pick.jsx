@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { getRandomNum } from '../../utils/utils'
 import { employeeDailyArr } from '../../src/data'
 
-import pickStyle from './pick.module.css'
+import pickStyle from './pick.module.scss'
 
 export default class Pick extends Component{
 
@@ -46,9 +46,9 @@ export default class Pick extends Component{
     return (
       <>
         <div className={pickStyle.main}>
-          <div className={pickStyle.title}>Who is the luckiest one?</div>
+          <div className={pickStyle.title}>Who is the luckiest?</div>
           <div className={pickStyle.name}>{name}</div>
-          <button className={pickStyle.btn} onClick={this.handleClickForDaily}>Pick</button>
+          <button className={`${pickStyle.btn} ${pickStyle.btnGhost} ${pickStyle.btnShine}`} onClick={this.handleClickForDaily}>Pick</button>
         </div>
       </>
     )

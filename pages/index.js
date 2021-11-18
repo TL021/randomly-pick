@@ -3,10 +3,8 @@ import Image from 'next/image'
 import Footer from '../components/footer/footer'
 import Header from '../components/header/header'
 import Pick from '../components/pick/pick'
-// import styles from '../styles/Home.module.css'
 
 import homeStyle from '../styles/Home.module.css'
-
 
 export default function Home() {
   return (
@@ -20,7 +18,7 @@ export default function Home() {
       <div className={homeStyle.main}>
         <Pick/>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   )
 }

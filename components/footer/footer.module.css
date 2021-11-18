@@ -1,7 +1,5 @@
 .footerWrap {
-  /* position: fixed; */
-  /* bottom: 0; */
-  background-color: whitesmoke;
+  background-color: black;
   width: 100%;
   height: 8rem;
 }
