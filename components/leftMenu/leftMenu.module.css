@@ -1,0 +1,18 @@
+.leftMenuWrap {
+  width: 200px;
+  background-color: white;
+  color: black;
+}
+
+.leftMenuTitle {
+  font-size: 20px;
+}
+
+.firstLevelWrap {
+  /* visibility: hidden; */
+  display: none;
+}
+
+.expendLevel {
+  display: block;
+}
