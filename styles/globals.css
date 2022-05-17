@@ -5,10 +5,8 @@ body {
   font-family: CiscoSansTT Regular;
 }
 body {
-  /* height: 100vh; */
-  /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 }
 a {
   color: inherit;

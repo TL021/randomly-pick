@@ -1,4 +1,11 @@
 import React, { Component } from 'react'
+import Button from '@mui/material/Button';
+import LoadingButton from '@mui/lab/LoadingButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
+import SaveIcon from '@mui/icons-material/Save';
+
 import { getRandomNum } from '../../utils/utils'
 import { employeeDailyArr } from '../../src/data'
 
@@ -8,6 +15,7 @@ export default class Pick extends Component{
 
   state = {
     name: '',
+    loading: false,
     len: employeeDailyArr.length,
     employeeDailyArr
   }
@@ -20,6 +28,7 @@ export default class Pick extends Component{
   handleClickForDaily = () => {
     this.interval && clearInterval(this.interval)
     this.timer && clearTimeout(this.timer)
+    this.state.loading = !this.state.loading
 
     this.props.employeeArr && this.setNewEmployeeArr()
     // console.log(this.state.employeeDailyArr)
@@ -31,6 +40,7 @@ export default class Pick extends Component{
 
     this.timer = setTimeout(() => {
       clearInterval(this.interval)
+      this.setState({loading: false})
     }, 3000)
   }
 
@@ -42,13 +52,23 @@ export default class Pick extends Component{
   }
 
   render() {
-    const { name } = this.state
+    const { name, loading } = this.state
     return (
       <>
         <div className={pickStyle.main}>
           <div className={pickStyle.title}>Who is the luckiest?</div>
           <div className={pickStyle.name}>{name}</div>
-          <button className={`${pickStyle.btn} ${pickStyle.btnGhost} ${pickStyle.btnShine}`} onClick={this.handleClickForDaily}>Pick</button>
+          <LoadingButton
+            size="middle"
+            onClick={this.handleClickForDaily}
+            loading={loading}
+            className={pickStyle.pickBtn}
+            endIcon={<LocationSearchingIcon />}
+            loadingPosition="end"
+            variant="contained"
+          >
+            Pick
+          </LoadingButton>
         </div>
       </>
     )
