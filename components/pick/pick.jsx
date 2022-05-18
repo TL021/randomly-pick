@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import LoadingButton from '@mui/lab/LoadingButton';
+import PersonSearchIcon from '@mui/icons-material/PersonSearch';
+
 import { getRandomNum } from '../../utils/utils'
 import { employeeDailyArr } from '../../src/data'
 
@@ -8,6 +11,7 @@ export default class Pick extends Component{
 
   state = {
     name: '',
+    loading: false,
     len: employeeDailyArr.length,
     employeeDailyArr
   }
@@ -20,17 +24,21 @@ export default class Pick extends Component{
   handleClickForDaily = () => {
     this.interval && clearInterval(this.interval)
     this.timer && clearTimeout(this.timer)
+    this.setState({loading: !this.state.loading})
 
     this.props.employeeArr && this.setNewEmployeeArr()
-    // console.log(this.state.employeeDailyArr)
 
     this.interval = setInterval(() => {
       const randomNum = getRandomNum(this.state.len)
+      console.log(111)
       this.setState({name: this.state.employeeDailyArr[randomNum]})
     }, 100);
 
     this.timer = setTimeout(() => {
       clearInterval(this.interval)
+      console.log(222)
+
+      this.setState({loading: false})
     }, 3000)
   }
 
@@ -42,13 +50,23 @@ export default class Pick extends Component{
   }
 
   render() {
-    const { name } = this.state
+    const { name, loading } = this.state
     return (
       <>
         <div className={pickStyle.main}>
           <div className={pickStyle.title}>Who is the luckiest?</div>
           <div className={pickStyle.name}>{name}</div>
-          <button className={`${pickStyle.btn} ${pickStyle.btnGhost} ${pickStyle.btnShine}`} onClick={this.handleClickForDaily}>Pick</button>
+          <LoadingButton
+            size="middle"
+            onClick={this.handleClickForDaily}
+            loading={loading}
+            className={pickStyle.pickBtn}
+            endIcon={<PersonSearchIcon />}
+            loadingPosition="end"
+            variant="contained"
+          >
+            Pick
+          </LoadingButton>
         </div>
       </>
     )

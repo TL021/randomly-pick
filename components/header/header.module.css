@@ -1,8 +1,8 @@
 .titleWrap {
   width: 100%;
   height: 6rem;
-  background-color: #000;
-  color: white;
+  background-color: white;
+  color: black;
   font-size: 1rem;
   position: fixed;
   top: 0;
@@ -23,4 +23,9 @@
   grid-column: 4 / 5;
   place-self: center;
 }
-
+.modeIcon {
+  cursor: pointer;
+}
+.slash {
+  font-size: 28px;
+}
