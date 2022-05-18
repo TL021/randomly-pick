@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
-import Button from '@mui/material/Button';
 import LoadingButton from '@mui/lab/LoadingButton';
-import DeleteIcon from '@mui/icons-material/Delete';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
-import SaveIcon from '@mui/icons-material/Save';
+import PersonSearchIcon from '@mui/icons-material/PersonSearch';
 
 import { getRandomNum } from '../../utils/utils'
 import { employeeDailyArr } from '../../src/data'
@@ -63,7 +59,7 @@ export default class Pick extends Component{
             onClick={this.handleClickForDaily}
             loading={loading}
             className={pickStyle.pickBtn}
-            endIcon={<LocationSearchingIcon />}
+            endIcon={<PersonSearchIcon />}
             loadingPosition="end"
             variant="contained"
           >
