@@ -18,9 +18,9 @@ export default function Header() {
           <a className={headerStyle.subTitle2}>Customized</a>
         </Link> */}
         <div className={headerStyle.subTitle2}>
-          <a href="javascript:;"><LightModeIcon fontSize="small" /></a>
+          <span className={headerStyle.modeIcon}><LightModeIcon fontSize="small" /></span>
           <span className={headerStyle.slash}>/</span>
-          <a href="javascript:;"><DarkModeIcon fontSize="small" /></a>
+          <span className={headerStyle.modeIcon}><DarkModeIcon fontSize="small" /></span>
         </div>
       </div>
     </>

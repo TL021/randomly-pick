@@ -23,6 +23,9 @@
   grid-column: 4 / 5;
   place-self: center;
 }
+.modeIcon {
+  cursor: pointer;
+}
 .slash {
   font-size: 28px;
 }

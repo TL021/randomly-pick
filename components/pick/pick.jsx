@@ -24,18 +24,20 @@ export default class Pick extends Component{
   handleClickForDaily = () => {
     this.interval && clearInterval(this.interval)
     this.timer && clearTimeout(this.timer)
-    this.state.loading = !this.state.loading
+    this.setState({loading: !this.state.loading})
 
     this.props.employeeArr && this.setNewEmployeeArr()
-    // console.log(this.state.employeeDailyArr)
 
     this.interval = setInterval(() => {
       const randomNum = getRandomNum(this.state.len)
+      console.log(111)
       this.setState({name: this.state.employeeDailyArr[randomNum]})
     }, 100);
 
     this.timer = setTimeout(() => {
       clearInterval(this.interval)
+      console.log(222)
+
       this.setState({loading: false})
     }, 3000)
   }
