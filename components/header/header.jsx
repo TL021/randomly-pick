@@ -14,13 +14,14 @@ export default function Header() {
         <Link href='/advanced'>
           <a className={headerStyle.subTitle1}>Advanced</a>
         </Link>
-        {/* <Link href='/customized'>
-          <a className={headerStyle.subTitle2}>Customized</a>
-        </Link> */}
         <div className={headerStyle.subTitle2}>
-          <span className={headerStyle.modeIcon}><LightModeIcon fontSize="small" /></span>
-          <span className={headerStyle.slash}>/</span>
-          <span className={headerStyle.modeIcon}><DarkModeIcon fontSize="small" /></span>
+          <span className={headerStyle.iconMode}>
+            <LightModeIcon fontSize="small" />
+          </span>
+          <span className={headerStyle.modeSlash}>/</span>
+          <span className={headerStyle.iconMode}>
+            <DarkModeIcon fontSize="small" />
+          </span>
         </div>
       </div>
     </>

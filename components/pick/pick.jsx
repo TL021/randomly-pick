@@ -7,6 +7,8 @@ import { employeeDailyArr } from '../../src/data'
 
 import pickStyle from './pick.module.scss'
 
+// import black from '@mui/material/colors/black';
+
 export default class Pick extends Component{
 
   state = {
@@ -30,14 +32,11 @@ export default class Pick extends Component{
 
     this.interval = setInterval(() => {
       const randomNum = getRandomNum(this.state.len)
-      console.log(111)
       this.setState({name: this.state.employeeDailyArr[randomNum]})
     }, 100);
 
     this.timer = setTimeout(() => {
       clearInterval(this.interval)
-      console.log(222)
-
       this.setState({loading: false})
     }, 3000)
   }
@@ -58,9 +57,9 @@ export default class Pick extends Component{
           <div className={pickStyle.name}>{name}</div>
           <LoadingButton
             size="middle"
+            color='primary'
             onClick={this.handleClickForDaily}
             loading={loading}
-            className={pickStyle.pickBtn}
             endIcon={<PersonSearchIcon />}
             loadingPosition="end"
             variant="contained"

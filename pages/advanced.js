@@ -22,7 +22,6 @@ export default function Advanced() {
   const handleAddClick = (e) => {
     employeeSet.add(addValue)
     setEmployeeArr([...employeeSet])
-    console.log('employeeArr@@@', addValue)
   }
 
   const handleHideClick = () => {
@@ -45,9 +44,9 @@ export default function Advanced() {
             onChange={e => {setAddValue(e.target.value)}}
           />
           <Button
-            className={homeStyle.btn}
+            size="middle"
+            color='primary'
             sx={{ width: 50 }}
-            size="small"
             onClick={handleAddClick} 
             variant="outlined"
           >
@@ -63,13 +62,14 @@ export default function Advanced() {
             size="small"
             renderInput={(params) => <TextField {...params} />}
             onChange={value => {
-              console.log('@@@', value)
+              // console.log('@@@', value)
             }}
           />
           <Button
-            className={homeStyle.btn}
+            // className={homeStyle.btn}
+            color='primary'
             sx={{ width: 50 }}
-            size="small"
+            size="middle"
             onClick={handleHideClick} 
             variant="outlined"
             disabled
