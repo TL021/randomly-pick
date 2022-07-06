@@ -3,8 +3,16 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 
 import headerStyle from './header.module.css'
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 export default function Header() {
+  const [ mode, setMode ] = useState('light')
+  useEffect(() => {
+    console.log(window.matchMedia)
+    console.log(window.matchMedia('(prefers-color-scheme: dark)'))
+  })
+
   return (
     <>
       <div className={headerStyle.titleWrap}>
